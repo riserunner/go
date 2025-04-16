@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>광고를 보고 이동 중...</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .message {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+  </style>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const nextUrl = urlParams.get('next');
+
+    setTimeout(() => {
+      if (nextUrl) {
+        window.location.href = nextUrl;
+      }
+    }, 3500); // 3.5초 후 본문 이동 (광고 노출 시간 확보)
+  </script>
+</head>
+<body>
+  <div class="message">광고를 확인한 후 이동 중입니다...<br>잠시만 기다려주세요 🙇‍♂️</div>
+</body>
+</html>
